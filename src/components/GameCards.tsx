@@ -2,6 +2,7 @@ import { Card, CardBody, Heading, Image } from '@chakra-ui/react'
 import React from 'react'
 import {Game} from "../hooks/useGames"
 import PlatformIconList from './PlatformIconList'
+import Metacritic from './Metacritic'
 interface props {
     game: Game
 }
@@ -12,6 +13,7 @@ const GameCards = ({game}: props) => {
      <CardBody>
       <Heading fontSize="2xlg">{game.name}</Heading>
       <PlatformIconList platforms={game.parent_platforms}/>
+      <Metacritic score={game.metacritic}/>
      </CardBody>
         
     </Card>
