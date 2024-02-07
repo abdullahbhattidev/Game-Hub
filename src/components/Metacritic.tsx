@@ -5,8 +5,9 @@ interface props {
     score: number
 }
 const Metacritic = ({score}: props) => {
+    let color = score>75? "green" : score>65? "yellow": ""
   return (
-    <Badge>{score}</Badge>
+    <Badge colorScheme={color} paddingX={2} borderRadius={4} fontSize={14}>{score}</Badge>
   )
 }
 
