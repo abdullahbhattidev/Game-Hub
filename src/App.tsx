@@ -7,20 +7,27 @@ import GenresList from "./components/GenresList"
 function App() {
   
   return (
-    <Grid templateAreas={{
-      base: '"nav" "main"',
-      lg: `"nav nav" "aside main"`
-    }}>
+    <Grid 
+      templateAreas={{
+        base: '"nav" "main"',
+        lg: `"nav nav" "aside main"`
+      }}
+
+      templateColumns={{
+        base: "1fr",
+        lg: "200px 1fr"
+      }}
+    >
       <GridItem area="nav">
         <NavBar/>
       </GridItem>
       <Show above="lg">
-      <GridItem area="aside">
+      <GridItem area="aside" padding = "20px 20px">
         <GenresList/>
       </GridItem>
       </Show>
       
-      <GridItem area="main">
+      <GridItem area="main" padding = "20px 20px">
         <GameGrid/>
       </GridItem>
     </Grid>
