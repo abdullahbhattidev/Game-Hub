@@ -21,7 +21,7 @@ function useData <T> (endpoint: string, requestConfig?: AxiosRequestConfig, depe
                        seterror(err.message); setIsLoading(false)});
 
         return ()=> controller.abort()
-    }, dependencies? [...dependencies] : [])
+    }, dependencies ? [...dependencies] : [])
 
     return {data, error, isLoading}
 }

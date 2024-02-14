@@ -16,8 +16,9 @@ export interface Game {
 }
 
 function useGames (selectedGenre: genres | null) {
-   return useData<Game>("/games", {params: {genre: selectedGenre?.id}}, [selectedGenre?.id] )
-   console.log(selectedGenre?.name)
+   return (
+    useData<Game>("/games", {params: {genres: selectedGenre?.id}}, [selectedGenre?.id] )
+   )   
 }
 
 export default useGames
