@@ -15,9 +15,9 @@ export interface Game {
     metacritic: number;
 }
 
-function useGames (selectedGenre: genres | null) {
+function useGames (selectedGenre: genres | null, selectedPlatform: platform | null) {
    return (
-    useData<Game>("/games", {params: {genres: selectedGenre?.id}}, [selectedGenre?.id] )
+    useData<Game>("/games", {params: {genres: selectedGenre?.id, parent_platforms: selectedPlatform?.id}}, [selectedGenre?.id, selectedPlatform?.id] )
    )   
 }
 
