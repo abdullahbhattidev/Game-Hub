@@ -18,7 +18,7 @@ export interface Game {
 
 function useGames (GameQuery: GameQuery) {
    return (
-    useData<Game>("/games", {params: {genres: GameQuery.genre?.id, parent_platforms: GameQuery.platform?.id}}, [GameQuery] )
+    useData<Game>("/games", {params: {genres: GameQuery.genre?.id, parent_platforms: GameQuery.platform?.id, ordering: GameQuery.ordering}}, [GameQuery] )
    )   
 }
 
