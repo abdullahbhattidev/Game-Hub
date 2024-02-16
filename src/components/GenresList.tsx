@@ -15,7 +15,6 @@ const GenresList = ({SelectGenre, highlightSelectGenre}: props) => {
     }
   return (
     <>
-      {/* {isLoading || error || <Spinner/>} */}
       <List>
         {data.map(genres => 
             <ListItem key={genres.id} paddingY= "5px" > 
