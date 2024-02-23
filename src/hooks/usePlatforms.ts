@@ -1,3 +1,4 @@
+import platfroms from "../apiData/platfroms";
 import useData from "./useData";
 
 interface platform{
@@ -7,7 +8,7 @@ interface platform{
 }
 
 function usePlatforms() {
-    return useData<platform>("/platforms/lists/parents")
+    return {data: platfroms, error: null, isLoading: false,}
 }
 
 export default usePlatforms
