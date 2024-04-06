@@ -17,7 +17,7 @@ const GenresList = ({SelectGenre, highlightSelectGenre}: props) => {
     <>
       <Heading fontSize='2xl' marginY={3}>Genres</Heading>
       <List>
-        {data.map(genres => 
+        {data?.results.map(genres => 
             <ListItem key={genres.id} paddingY= "5px" > 
               <HStack>
                 <Image borderRadius={8} boxSize="32px" objectFit='cover' src={cropImageUrl(genres.image_background)}/>
