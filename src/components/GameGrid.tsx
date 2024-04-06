@@ -14,11 +14,11 @@ const GameGrid = ({GameQuery}: props) => {
   const SkeletonArray = new Array(20).fill(1);
   return (
     <>
-     {error && <Text>{error}</Text>}
+     {error && <Text>{error.message}</Text>}
      
      <SimpleGrid columns={{sm:1, md:2, lg:3, xl:4}} spacing={10} marginTop='20px' >
         {isLoading && SkeletonArray.map(() => <CardSkeleton/>)}
-        {data.map(game => <GameCards game={game}/>)}  
+        {data?.results.map(game => <GameCards game={game}/>)}  
      </SimpleGrid>
     </>
   )

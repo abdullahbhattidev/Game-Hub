@@ -2,10 +2,7 @@ import { useEffect, useState } from "react";
 import apiClient from "../api-client";
 import { AxiosRequestConfig, CanceledError } from "axios";
 
-export interface fetchResponse<T>{
-    count: number;
-    results: T[]
-}
+
 
 function useData <T> (endpoint: string, requestConfig?: AxiosRequestConfig, dependencies?: any[]) {
     const [data,setdata] = useState<T[]>([])
