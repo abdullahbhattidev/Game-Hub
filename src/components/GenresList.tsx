@@ -1,7 +1,6 @@
-import React from 'react';
-import useGenres, { genres } from '../hooks/useGenres';
-import { Button, HStack, Heading, Image, List, ListItem, Spinner, Text } from '@chakra-ui/react';
+import { Button, HStack, Heading, Image, List, ListItem, Spinner } from '@chakra-ui/react';
 import cropImageUrl from '../cropImage';
+import useGenres, { genres } from '../hooks/useGenres';
 
 interface props {
   SelectGenre: (genre: genres) => void;

@@ -1,7 +1,7 @@
 import { Heading } from '@chakra-ui/react'
-import usePlatforms, { platform } from '../hooks/usePlatforms'
-import useGenres, { genres } from '../hooks/useGenres'
 import { GameQuery } from '../App'
+import useGenres from '../hooks/useGenres'
+import usePlatforms from '../hooks/usePlatforms'
 
 interface props{
   gameQuery: GameQuery
