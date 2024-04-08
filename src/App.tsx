@@ -10,8 +10,8 @@ import { genres } from "./hooks/useGenres"
 import { platform } from "./hooks/usePlatforms"
 
 export interface GameQuery {
-  genre : genres | null;
-  platform : platform |null;
+  genreId : number | null;
+  platformId : number |null;
   ordering : string | null;
   search: string | null;
 }
@@ -38,14 +38,14 @@ function App() {
 
       <Show above="lg">
       <GridItem area="aside" padding = "20px 20px">
-        <GenresList highlightSelectGenre={GameQuery.genre} SelectGenre={(genre)=> setGameQuery({...GameQuery,genre})}/>
+        <GenresList highlightSelectGenre={GameQuery.genreId} SelectGenre={(genre)=> setGameQuery({...GameQuery,genreId:genre.id})}/>
       </GridItem>
       </Show>
       
       <GridItem area="main" padding = "20px 20px">
         <PageHeading gameQuery={GameQuery}/>
         <HStack spacing={5}>
-          <PlatformSelector onSelectPlatform={(platform)=> setGameQuery({...GameQuery, platform}) }/>
+          <PlatformSelector onSelectPlatform={(platform)=> setGameQuery({...GameQuery, platformId: platform.id}) }/>
           <SortSelector onSelectSortItem={(ordering) => setGameQuery({...GameQuery, ordering}) }/>
         </HStack>
         <GameGrid GameQuery={GameQuery}/>

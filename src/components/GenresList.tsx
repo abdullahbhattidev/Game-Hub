@@ -5,7 +5,7 @@ import cropImageUrl from '../cropImage';
 
 interface props {
   SelectGenre: (genre: genres) => void;
-  highlightSelectGenre: genres | null
+  highlightSelectGenre: number | null
 }
 
 const GenresList = ({SelectGenre, highlightSelectGenre}: props) => {
@@ -21,7 +21,7 @@ const GenresList = ({SelectGenre, highlightSelectGenre}: props) => {
             <ListItem key={genres.id} paddingY= "5px" > 
               <HStack>
                 <Image borderRadius={8} boxSize="32px" objectFit='cover' src={cropImageUrl(genres.image_background)}/>
-                <Button whiteSpace='normal' textAlign='left' fontWeight={genres.id === highlightSelectGenre?.id? "bold": "normal"} onClick={()=> SelectGenre(genres)} variant="link" fontSize="lg"> {genres.name} </Button>
+                <Button whiteSpace='normal' textAlign='left' fontWeight={genres.id === highlightSelectGenre? "bold": "normal"} onClick={()=> SelectGenre(genres)} variant="link" fontSize="lg"> {genres.name} </Button>
               </HStack> 
             </ListItem>
         )}
