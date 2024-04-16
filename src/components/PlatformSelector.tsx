@@ -6,7 +6,7 @@ import useGameStore from '../stores/GameQueryStore'
 
 const PlatformSelector = () => {
   const {data, error, isLoading} = usePlatforms()
-  const{onSelectPlatforms}=useGameStore()
+  const onSelectPlatforms=useGameStore(s=> s.onSelectPlatforms)
   const [MenuButtonTag, setMenuButtonTag] = useState("Platforms")
   if (error) return null;
   return (

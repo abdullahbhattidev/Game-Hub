@@ -14,7 +14,7 @@ const SortSelector = () => {
         {value: 'rating', label:'Average Rating'},
     ]
     const[sortMenuTag, setsortMenuTag] = useState('Relevance')
-    const{onSelectSortItem}=useGameStore()
+    const onSelectSortItem =useGameStore(s=> s.onSelectSortItem)
     return (
         <Menu>
             <MenuButton as={Button} rightIcon={<BsChevronDown/>}>Order by: {sortMenuTag}</MenuButton>

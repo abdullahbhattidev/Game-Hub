@@ -3,11 +3,9 @@ import { useRef } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import useGameStore from '../stores/GameQueryStore';
 
-
-
 const SearchBar = () => {
   const ref = useRef<HTMLInputElement>(null);
-  const{onSearch}=useGameStore()
+  const onSearch=useGameStore(s=> s.onSearch)
   return (
     <form style={{width: "100%"}} onSubmit={(event)=> 
         {

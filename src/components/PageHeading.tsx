@@ -7,7 +7,7 @@ import useGameStore from '../stores/GameQueryStore'
 
 const PageHeading = ()=> {
  const{ data: genres} = useGenres()
- const{gameQuery}=useGameStore()
+ const gameQuery=useGameStore(s=> s.gameQuery)
  const genre = genres.results.find(g=> g.id === gameQuery.genreId)
 
  const{ data: platform} = usePlatforms()
