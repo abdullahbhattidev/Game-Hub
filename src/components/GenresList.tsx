@@ -5,7 +5,7 @@ import useGameStore from '../stores/GameQueryStore';
 
 const GenresList = () => {
     const {data, error, isLoading} = useGenres()
-    const{onSelectGenres}=useGameStore()
+    const{onSelectGenres, gameQuery}=useGameStore()
     if(isLoading || error) {
       return <Spinner/>
     }
@@ -17,7 +17,7 @@ const GenresList = () => {
             <ListItem key={genres.id} paddingY= "5px" > 
               <HStack>
                 <Image borderRadius={8} boxSize="32px" objectFit='cover' src={cropImageUrl(genres.image_background)}/>
-                <Button whiteSpace='normal' textAlign='left'  onClick={()=> onSelectGenres(genres)} variant="link" fontSize="lg"> {genres.name} </Button>
+                <Button whiteSpace='normal' textAlign='left' fontWeight={genres.id === gameQuery.genreId? "bold": "normal"} onClick={()=> onSelectGenres(genres)} variant="link" fontSize="lg"> {genres.name} </Button>
               </HStack> 
             </ListItem>
         )}
