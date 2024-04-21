@@ -1,6 +1,6 @@
 import { create } from "zustand";
-import { genres } from "../hooks/useGenres";
-import { platform } from "../hooks/usePlatforms";
+import { genre } from "../entities/genres";
+import { platform } from "../entities/platform";
 
 export interface GameQuery {
     genreId ?: number | null;
@@ -12,7 +12,7 @@ export interface GameQuery {
 interface GameQueryStore{
     gameQuery: GameQuery,
     onSearch: (searchText:string)=>void,
-    onSelectGenres: (genres:genres)=> void,
+    onSelectGenres: (genres:genre)=> void,
     onSelectPlatforms: (platforms:platform)=> void,
     onSelectSortItem : (value : string) => void
 }

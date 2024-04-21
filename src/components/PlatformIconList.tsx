@@ -4,7 +4,7 @@ import { BsGlobe } from "react-icons/bs";
 import { FaAndroid, FaApple, FaLinux, FaPlaystation, FaWindows, FaXbox } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
-import { platform } from '../hooks/usePlatforms';
+import { platform } from "../entities/platform";
 
 interface props {
     platforms: {platform: platform} [];

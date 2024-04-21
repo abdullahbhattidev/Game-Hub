@@ -1,6 +1,6 @@
 import { Box, Card, CardBody, HStack, Heading, Image, transition } from '@chakra-ui/react'
 import cropImageUrl from '../cropImage'
-import { Game } from "../hooks/useGames"
+import { Game } from "../entities/Game"
 import Emojis from './Emojis'
 import Metacritic from './Metacritic'
 import PlatformIconList from './PlatformIconList'
