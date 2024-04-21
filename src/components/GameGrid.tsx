@@ -22,10 +22,10 @@ const GameGrid = () => {
           hasMore={!!hasNextPage}
           loader={<Spinner/>}>
         
-        <SimpleGrid columns={{sm:1, md:2, lg:3, xl:4}} spacing={10} marginTop='20px' >
+        <SimpleGrid  columns={{sm:1, md:2, lg:3, xl:4}} spacing={10} marginTop='20px' >
             {isLoading && SkeletonArray.map(() => <CardSkeleton/>)}
             {data?.pages.map((page,index)=>  
-            <React.Fragment key={index}>
+            <React.Fragment  key={index}>
               {page.results.map(game => <GameCards game={game}/>)}
             </React.Fragment>
             )}

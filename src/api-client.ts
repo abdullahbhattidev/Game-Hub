@@ -21,5 +21,9 @@ class APIClient<T> {
         return axiosInstant.get<fetchResponse<T>>(this.endpoint,config )
                             .then(res=> res.data)
     }
+    getDetails = (id: number | string)=> {
+        return axiosInstant.get<T>(this.endpoint + "/" + id)
+                            .then(res=> res.data)
+    }
 }
 export default APIClient
