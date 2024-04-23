@@ -5,6 +5,7 @@ import ExpandableText from '../components/ExpandableText'
 import DefinitionItems from '../components/DefinitionItems'
 import Metacritic from '../components/Metacritic'
 import GameAttributes from '../components/GameAttributes'
+import GameTrailer from '../components/GameTrailer'
 
 const GameDetail = () => {
   const {slug}= useParams()
@@ -13,7 +14,8 @@ const GameDetail = () => {
     <>
       <Heading>{data?.name}</Heading>
       <ExpandableText>{data?.description_raw}</ExpandableText>
-      <GameAttributes data={data}/>  
+      <GameAttributes data={data}/> 
+      <GameTrailer Id={data?.id}/> 
     </>
     
   )
