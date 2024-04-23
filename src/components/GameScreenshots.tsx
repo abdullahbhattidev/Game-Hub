@@ -9,7 +9,7 @@ interface props{
 const GameScreenshots = ({Id}:props) => {
   const {data}= useGameScreenshots(Id)
   return (
-    <SimpleGrid columns={{sm:1, md:2, lg:3, xl:4}} spacing={2}>
+    <SimpleGrid columns={{sm:1, md:2, lg:3, xl:4}} spacing={2} marginY={5}>
         {data?.results.map(images=> <Image src={images.image}/>)}
     </SimpleGrid>
   )
