@@ -11,6 +11,7 @@ const GameTrailer = ({Id}: props) => {
   return (
     <video src={data?.results[0].data[480]} poster={data?.results[0].preview} controls muted/>
   )
+  return null
 }
 
 export default GameTrailer

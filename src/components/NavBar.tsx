@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 
 function NavBar (){
-    const navigate  = useNavigate()
+    const navigate  = useNavigate();
     return (
         <HStack justifyContent="space-between" padding="10px">
             <Image src={logo} boxSize="60px" onClick={()=> navigate("/") }/>
